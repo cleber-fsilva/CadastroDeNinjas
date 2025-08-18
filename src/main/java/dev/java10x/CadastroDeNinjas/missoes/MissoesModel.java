@@ -4,11 +4,13 @@ import dev.java10x.CadastroDeNinjas.ninjas.NinjaModel;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "tb_missoes")
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
 public class MissoesModel {
 
     @Id
@@ -22,6 +24,6 @@ public class MissoesModel {
 
     // @OneToMany -> uma missao pode ter varios ninjas
     @OneToMany(mappedBy = "missoes")
-    private NinjaModel ninja;
+    private List<NinjaModel> ninjas;
 
 }

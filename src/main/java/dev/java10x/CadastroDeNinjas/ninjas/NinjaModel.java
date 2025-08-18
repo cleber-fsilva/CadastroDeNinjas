@@ -7,9 +7,9 @@ import lombok.*;
 
 @Entity
 @Table(name = "tb_cadastro")
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
 public class NinjaModel {
 
 
