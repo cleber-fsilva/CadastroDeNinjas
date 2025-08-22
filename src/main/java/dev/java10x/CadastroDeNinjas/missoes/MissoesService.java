@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class MissoesService {
@@ -25,7 +26,25 @@ public class MissoesService {
     }
 
     // Listar missao por ID
+    public MissoesModel listarMissoesPorId(Long id) {
+        Optional<MissoesModel> missaoPorId = missoesRepository.findById(id);
+        return missaoPorId.orElse(null);
+    }
 
+    // Alterar Missao
+    public MissoesModel alterarMissao(Long id, MissoesModel missaoAtualizada) {
+        if (missoesRepository.existsById(id)) {
+            missaoAtualizada.setId(id);
+            missoesRepository.save(missaoAtualizada);
+        }
+
+        return null;
+    }
+
+    //Delete Missao
+    public void deletaMissao(Long id) {
+        missoesRepository.deleteById(id);
+    }
 
 
 }

@@ -28,17 +28,22 @@ public class MissoesController {
     }
 
     // Listar Missoes por ID -- READ
+    @GetMapping("/listar/{id}")
+    public MissoesModel listarMissoesPorId(@PathVariable Long id) {
+        return missoesService.listarMissoesPorId(id);
+    }
 
 
     // Alterar Missao -- UPDATE
-    @PutMapping("/alterar")
-    public String alterarMissao() {
-        return "Missão alterada";
+    @PutMapping("/alterar/{id}")
+    public MissoesModel alterarMissao(@PathVariable Long id,@RequestBody MissoesModel missaoAtualizada) {
+        missoesService.alterarMissao(id, missaoAtualizada);
+        return missoesService.listarMissoesPorId(id);
     }
 
     // Deletar Missao -- DELETE
-    @DeleteMapping("/deletar")
-    public String deletarMissao() {
-        return "Missão deletada";
+    @DeleteMapping("/deletar/{id}")
+    public void deletarMissao(@PathVariable Long id) {
+        missoesService.deletaMissao(id);
     }
 }
