@@ -12,6 +12,8 @@ import java.util.List;
 @NoArgsConstructor
 public class MissoesDTO {
 
+    //CRIANDO O DTO
+
     private Long id;
 
     private String missao;
