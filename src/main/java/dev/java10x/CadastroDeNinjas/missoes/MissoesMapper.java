@@ -2,7 +2,6 @@ package dev.java10x.CadastroDeNinjas.missoes;
 
 public class MissoesMapper {
 
-    // criando o MAPPER
 
     MissoesModel map(MissoesDTO missoesDTO) {
         MissoesModel missoesModel = new MissoesModel();
