@@ -1,44 +1,108 @@
-Sistema de Cadastro de Ninjas 
+# 🥷 Sistema de Cadastro de Ninjas
 
-Bem-vindo ao Sistema de Cadastro de Ninjas!
-Este projeto é uma aplicação de arquitetura em camadas desenvolvida com Spring Boot, projetada para cadastrar ninjas e suas respectivas missões. O projeto utiliza H2 como banco de dados em memória, Flyway para migrações de banco de dados e segue boas práticas de desenvolvimento de software como controle de versão com Git e hospedagem de repositório no GitHub.
+Bem-vindo ao **Sistema de Cadastro de Ninjas**!  
+Este projeto é uma aplicação em arquitetura de camadas desenvolvida com **Spring Boot**, com o objetivo de cadastrar ninjas e suas respectivas missões.  
 
-Visão Geral do Projeto
+O sistema utiliza um banco de dados **H2 em memória**, **Flyway** para migrações e segue boas práticas de desenvolvimento como controle de versão com **Git** e hospedagem no **GitHub**.
 
-Este sistema foi desenvolvido para gerenciar ninjas e suas missões. Cada ninja pode ser atribuído a uma única missão, enquanto uma missão pode ser associada a vários ninjas. As principais funcionalidades incluem:
+---
 
-*Cadastro de ninjas com nome, idade, email e rank.
+## 📌 Visão Geral
 
-*Atribuição de uma missão para um ninja.
+O sistema foi projetado para gerenciar **ninjas** e suas **missões**.
 
-*Gerenciamento de missões e dos ninjas associados a elas.
+- Cada **ninja** pode ser atribuído a **uma única missão**.
+- Cada **missão** pode ser associada a **vários ninjas**.
 
+### Funcionalidades Principais
 
-Tecnologias Utilizadas
+- ✅ Cadastro de ninjas com nome, idade, e-mail e rank.  
+- ✅ Atribuição de uma missão para um ninja.  
+- ✅ Gerenciamento de missões e dos ninjas associados a elas.
 
+---
 
-*Spring Boot: Para criação da aplicação web e gerenciamento de dependências.
+## 🛠️ Tecnologias Utilizadas
 
-*Banco de Dados H2: Banco de dados em memória para desenvolvimento e testes.
+- **Java + Spring Boot** – Backend e estrutura da aplicação.
+- **Spring Data JPA** – Acesso e persistência no banco de dados.
+- **Banco de Dados H2** – Banco em memória para desenvolvimento/testes.
+- **Flyway** – Migrações de banco de dados versionadas.
+- **JPA (Java Persistence API)** – Mapeamento objeto-relacional (ORM).
+- **Maven** – Build e gerenciamento de dependências.
+- **SQL** – Manipulação e estruturação do banco.
+- **Git + GitHub** – Controle de versão e hospedagem do projeto.
 
-*Flyway: Para gerenciamento de migrações do banco de dados.
+---
 
-*JPA (Java Persistence API): Para mapeamento objeto-relacional (ORM).
+## 🗃️ Design do Banco de Dados
 
-*Git: Controle de versão para gerenciamento de mudanças no código.
+A modelagem segue a seguinte estrutura de relacionamento:
 
-*GitHub: Hospedagem do repositório para controle de versão.
+### 🥷 Ninja
 
-*Spring Data JPA: Para interação com o banco de dados.
+| Campo     | Tipo     |
+|-----------|----------|
+| `id`      | Long     |
+| `nome`    | String   |
+| `idade`   | Integer  |
+| `email`   | String   |
+| `rank`    | String   |
+| `missao`  | Missão   |
 
-*Maven: Para build e gerenciamento de dependências do projeto.
+Cada ninja pode estar associado a **uma missão**.
 
-*SQL: Manipulação do banco de dados
+### 🎯 Missão
 
+| Campo        | Tipo     |
+|--------------|----------|
+| `id`         | Long     |
+| `titulo`     | String   |
+| `descricao`  | String   |
 
-Design do Banco de Dados
-O esquema do banco de dados segue as seguintes relações:
+Cada missão pode ser atribuída a **vários ninjas**.
 
-Ninja: Contém atributos como id, nome, idade, email e rank.
-Missão: Contém atributos como id, título e descrição.
-Um Ninja pode ter apenas uma Missão, mas uma Missão pode ser atribuída a vários Ninjas.
+---
+
+## 🚀 Como Executar o Projeto
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/cleber-fsilva/CadastroDeNinjas.git
+   cd seu-repositorio
+Execute o projeto via Maven:
+
+bash
+Copiar código
+./mvnw spring-boot:run
+Acesse o sistema:
+
+arduino
+Copiar código
+http://localhost:8080
+Acesse o console do H2:
+
+bash
+Copiar código
+http://localhost:8080/h2-console
+Use as configurações:
+
+JDBC URL: jdbc:h2:mem:testdb
+
+Usuário: sa
+
+Senha: (deixe em branco)
+
+📄 Licença
+Este projeto está licenciado sob a MIT License.
+
+🤝 Contribuindo
+Contribuições são bem-vindas!
+Sinta-se à vontade para abrir uma issue ou enviar um pull request.
+
+📬 Contato
+Caso queira entrar em contato:
+
+Seu Nome – silva1cleber@gmail.com
+
+GitHub – @cleber-fsilva
